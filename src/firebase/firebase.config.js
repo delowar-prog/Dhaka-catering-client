@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCZTQyOVA7RHPnHlc8HLWYAx8Jx3qs6FlU",
-  authDomain: "travel-guru-fed85.firebaseapp.com",
-  projectId: "travel-guru-fed85",
-  storageBucket: "travel-guru-fed85.appspot.com",
-  messagingSenderId: "600433438439",
-  appId: "1:600433438439:web:600b62f5d72572bb89fc42"
+  apiKey: "AIzaSyB0q7ad034McwFEy8fH8daVm2pDETgmoB4",
+  authDomain: "dhaka-catering.firebaseapp.com",
+  projectId: "dhaka-catering",
+  storageBucket: "dhaka-catering.appspot.com",
+  messagingSenderId: "127953029647",
+  appId: "1:127953029647:web:2749a51d9a0693bde6f17a"
 };
 
 // Initialize Firebase
