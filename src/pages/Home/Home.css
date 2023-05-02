@@ -8,3 +8,21 @@
 .card>img{
     height: 300px;
 }
+
+.headingStyle{
+    color:#212B35;
+}    
+.btnDesign{
+    background-color: #212B35;
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    color:#fff;
+    font-weight: bold;
+}
+.serviceList ul{
+        list-style-image: url('../../assets/checked.png'); 
+        color:#EFC40B;
+}
+
+

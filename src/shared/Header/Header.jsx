@@ -13,23 +13,22 @@ const Header = () => {
     userLogout().then().catch(error => console.log(error.message))
   }
   return (
-    <div>
+    <div className=''>
       <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "#212B35" }} className='py-4'>
         <Container>
           <Navbar.Brand href="#home" className='text-white'>Dhaka Catering</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home" className='text-white'>Home</Nav.Link>
-            <Nav.Link href="#features" className='text-white'>Blog</Nav.Link>
+            <Nav.Link><Link to="/" className='text-decoration-none text-white'>Home</Link></Nav.Link>
+            <Nav.Link><Link to="" className='text-decoration-none text-white'>Blog</Link></Nav.Link>
             <Nav.Link href="#pricing" className='text-white'></Nav.Link>
-            <Button variant="light">Login</Button>
+            <Link to="/login"><Button variant="light">Login</Button></Link>
           </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
-
   )
 }
 
