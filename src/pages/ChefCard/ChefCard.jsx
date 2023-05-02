@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaGraduationCap, FaRegStar } from "react-icons/fa";
-import bannerImg from '../../assets/bannerImg.png'
+import { Link } from 'react-router-dom';
 const ChefCard = ({chef}) => {
     const {id,chefName,photo,experience,recipes_list}=chef
     return (
@@ -15,7 +15,7 @@ const ChefCard = ({chef}) => {
                     <span className='d-flex align-items-center gap-1'><FaRegStar className='fs-6'></FaRegStar>4.8</span>
                 </div>
                 <hr></hr>
-                <button href="#" className="w-100 btnDesign">View Recipes</button>
+                <Link to="/chef-details"><button className="w-100 btnDesign">View Recipes</button></Link>
             </div>
         </div>
     )

@@ -1,14 +1,13 @@
 import React, { useContext } from 'react'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { BsSearch } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
-  // const {user, loading,userLogout}=useContext(AuthContext)
-  // if(loading){
-  //   return <p>Loading....</p>
-  // }
+  const {user, loading,userLogout}=useContext(AuthContext)
+  if(loading){
+    return <p>Loading....</p>
+  }
   const handleLogout = () => {
     userLogout().then().catch(error => console.log(error.message))
   }
@@ -22,8 +21,12 @@ const Header = () => {
           <Nav className="ms-auto">
             <Nav.Link><Link to="/" className='text-decoration-none text-white'>Home</Link></Nav.Link>
             <Nav.Link><Link to="" className='text-decoration-none text-white'>Blog</Link></Nav.Link>
-            <Nav.Link href="#pricing" className='text-white'></Nav.Link>
-            <Link to="/login"><Button variant="light">Login</Button></Link>
+           {
+            user&&<Nav.Link href="#pricing" className='text-white'>sakfd</Nav.Link>
+           }
+           {
+            user?<Button variant="light" onClick={handleLogout}>Logout</Button>:<Link to="/login"><Button variant="light">Login</Button></Link>
+           }
           </Nav>
           </Navbar.Collapse>
         </Container>
