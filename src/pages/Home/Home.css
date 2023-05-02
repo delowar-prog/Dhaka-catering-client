@@ -18,7 +18,10 @@
     padding: 5px;
     border-radius: 5px;
     color:#fff;
-    font-weight: bold;
+    text-transform: uppercase;
+}
+.btnDesign:hover{
+    background-color: #141b21; 
 }
 .serviceList ul{
         list-style-image: url('../../assets/checked.png'); 

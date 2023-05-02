@@ -14,8 +14,8 @@ const Login = () => {
         <p className='text-center mt-2'>To create a new account? <span className='text-primary fw-bold'><Link to="/register">Register</Link></span></p>
       </form>
       <div className='login-with-others mx-auto'>
-        <button className='p-1 border rounded w-100 d-flex justify-content-center align-items-center gap-2 fs-6 fw-bold my-2 text-secondary'><FaGoogle className='text-primary'></FaGoogle> Continue with Google</button>
-        <button className='p-1 border rounded w-100 d-flex justify-content-center align-items-center gap-2 fs-6 fw-bold text-secondary'><FaGithub className='text-primary'></FaGithub> Continue with Github</button>
+      <button className='p-1  btn btn-success rounded w-100 d-flex justify-content-center align-items-center gap-2 fs-6 fw-bold my-2'><FaGoogle className='text-white'></FaGoogle> Continue with Google</button>
+      <button className='p-1  btn btn-success rounded w-100 d-flex justify-content-center align-items-center gap-2 fs-6 fw-bold '><FaGithub className='text-white'></FaGithub> Continue with Github</button>
       </div>
     </div>
 
