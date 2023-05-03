@@ -1,8 +1,9 @@
 import React from 'react'
 import { FaGraduationCap, FaRegStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AiOutlineLike } from "react-icons/ai";
 const ChefCard = ({chef}) => {
-    const {id,chefName,photo,experience,recipes_list}=chef
+    const {id,chefName,photo,experience,recipes_list,likes}=chef
     return (
         <div className="col card p-3" style={{ width: "18rem" }}>
             <img src={photo} className="card-img-top w-100" alt="..." />
@@ -12,7 +13,7 @@ const ChefCard = ({chef}) => {
                 <div className='d-flex justify-content-between'>
                     <span><FaGraduationCap className='fs-4'></FaGraduationCap>-{experience}</span>
                     <span className='flex-grow-1 ms-3'>Recipes-{recipes_list.length}</span>
-                    <span className='d-flex align-items-center gap-1'><FaRegStar className='fs-6'></FaRegStar>4.8</span>
+                    <span className='d-flex align-items-center gap-1'><AiOutlineLike className='fs-6'></AiOutlineLike>{likes}</span>
                 </div>
                 <hr></hr>
                 <Link to={`/chef-details/${id}`}><button className="w-100 btnDesign">View Recipes</button></Link>

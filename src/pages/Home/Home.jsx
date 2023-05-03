@@ -10,7 +10,7 @@ const Home = () => {
 
   //load chefs from server
   useEffect(() => {
-    fetch('http://localhost:5000/')
+    fetch('https://dhaka-catering-server-delowarmilton-gmailcom.vercel.app/')
       .then(res => res.json())
       .then(data => {
         setChefs(data)

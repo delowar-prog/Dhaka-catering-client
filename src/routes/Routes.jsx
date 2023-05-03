@@ -18,12 +18,12 @@ const router = createBrowserRouter([
             {
               path: "/",
               element: <Home />,
-              loader:()=>fetch('http://localhost:5000/services')
+              loader:()=>fetch('https://dhaka-catering-server-delowarmilton-gmailcom.vercel.app/services')
             },
             {
               path:'/chef-details/:id',
               element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-              loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
+              loader:({params})=>fetch(`https://dhaka-catering-server-delowarmilton-gmailcom.vercel.app/chef/${params.id}`)
             },
             {
               path:'/blog',

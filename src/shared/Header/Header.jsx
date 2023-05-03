@@ -24,7 +24,7 @@ const Header = () => {
             <Nav.Link><NavLink to="/blog" className={({ isActive }) => isActive ? "text-decoration-none text-info" : "text-decoration-none text-white"
           }>Blog</NavLink></Nav.Link>
            {
-            user&&<Nav.Link href="#pricing" className='text-white'>sakfd</Nav.Link>
+            user&&<Nav.Link className='text-white' title={user.displayName}><img src={user.photoURL} style={{width:"40px",height:"40px",borderRadius:"50%"}}></img></Nav.Link>
            }
         
            {

@@ -10,8 +10,7 @@ const Login = () => {
   const navigate=useNavigate()
   const location=useLocation();
   const from=location.state?.from?.pathname|| "/"
-  // const from=location.state?.from?.pathname || '/'
-  console.log(location)
+
   //control input value
   const handleEmailChange=(e)=>{
     const email=e.target.value
@@ -24,7 +23,9 @@ const Login = () => {
   const handleLogin=(e)=>{
     e.preventDefault()
     userLogin(email,password)
-    .then(()=>{
+    .then((res)=>{
+      const loggUser=res.user
+      console.log(loggUser)
       navigate(from)
     }).catch(error=>setError(error.message))
   }
