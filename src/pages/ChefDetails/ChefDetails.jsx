@@ -1,79 +1,43 @@
 import React from 'react'
 import './ChefDetails.css'
-import fackImg from '../../assets/asdff.jpg'
+import { AiOutlineLike } from "react-icons/ai";
 import { FaGraduationCap, FaRegStar } from "react-icons/fa";
+import { useLoaderData } from 'react-router-dom';
+import RecipeItem from '../RecipeItem/RecipeItem';
 const ChefDetails = () => {
+  const chefDetails=useLoaderData()
+  const {id,chefName,likes, photo,experience,chefDetail,recipes_list}=chefDetails
   return (
-    <div>
+    <div className='bg-dark'>
       <div className='' style={{ height: "15px", backgroundColor: "#676767" }}>
       </div>
       <div className='w-100 BannerBg'>
         <h2 className='my-0 p-4 text-center text-white'>Chef Details</h2>
       </div>
-      <div className='details-about-chef container p-5'>
-        <div className='p-4 border rounded d-flex flex-column flex-md-row'>
+      <div className='details-about-chef container  p-3 text-light'>
+        <div className='p-4 border-0 rounded d-flex flex-column flex-md-row gap-4'>
           <div className='profileImg w-50'>
-            <img src={fackImg}></img>
-            <h5 className='my-4'>Abdul Latif Khandaker</h5>
+            <img src={photo} className='w-100'></img>
+            <h5 className='my-4'>{chefName}</h5>
             <hr></hr>
             <div className='d-flex justify-content-between'>
-              <span className='fs-5'><FaGraduationCap className='fs-2'></FaGraduationCap>-10y</span>
-              <span className='flex-grow-1 ms-5 fs-5'>Recipes-2</span>
-              <span className='d-flex align-items-center gap-1 fs-5'><FaRegStar className='fs-5'></FaRegStar>4.8</span>
+              <span className='fs-6'><FaGraduationCap className='fs-4'></FaGraduationCap>{experience}</span>
+              <span className='fs-6'>Recipe {recipes_list.length}</span>
+              <span className='d-flex align-items-center gap-1 fs-6'><AiOutlineLike className='fs-5'></AiOutlineLike>{likes}</span>
             </div>
             <hr></hr>
             <div>
-              <h6>More About Abdul Latif Khandaker: </h6>
-              <p className='text-justify fs-6'>Amina Ahmed is a renowned Bangladeshi chef with over 15 years of experience in cooking traditional Bangladeshi cuisine. She is known for her expertise in using locally sourced spices and ingredients to create delicious and authentic dishes</p>
-              <hr></hr>
+              <h6>More About {chefName}: </h6>
+              <p className='text-justify fs-6'>{chefDetail}</p>
             </div>
           </div>
-          <div className='details-recipes px-4'>
+          <div className='details-recipes px-4 w-100'>
             <div>
-              <h5>Recipes Details: </h5>
+              <h5>My Recipes: </h5>
               <div className='recipes-details'>
-                <div className="card mb-3">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src="..." className="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card mb-3">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src="..." className="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card mb-3">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src="..." className="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {
+                recipes_list.map((recipe,i)=><RecipeItem key={i} recipe={recipe}></RecipeItem>)
+              }
               </div>
             </div>
 

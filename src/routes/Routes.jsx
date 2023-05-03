@@ -7,6 +7,7 @@ import Register from '../pages/Register/Register';
 import ErrorPage from '../pages/404/ErrorPage';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
 import PrivateRoute from './PrivateRoute';
+import Blogs from '../pages/Blogs/Blogs';
 
 const router = createBrowserRouter([
         {
@@ -20,8 +21,13 @@ const router = createBrowserRouter([
               loader:()=>fetch('http://localhost:5000/services')
             },
             {
-              path:'/chef-details',
-              element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>
+              path:'/chef-details/:id',
+              element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
+              loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
+            },
+            {
+              path:'/blog',
+              element:<Blogs></Blogs>
             },
             {
               path:'/login',

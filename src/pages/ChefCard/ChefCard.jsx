@@ -15,7 +15,7 @@ const ChefCard = ({chef}) => {
                     <span className='d-flex align-items-center gap-1'><FaRegStar className='fs-6'></FaRegStar>4.8</span>
                 </div>
                 <hr></hr>
-                <Link to="/chef-details"><button className="w-100 btnDesign">View Recipes</button></Link>
+                <Link to={`/chef-details/${id}`}><button className="w-100 btnDesign">View Recipes</button></Link>
             </div>
         </div>
     )

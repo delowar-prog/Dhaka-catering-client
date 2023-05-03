@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
@@ -19,11 +19,14 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link><Link to="/" className='text-decoration-none text-white'>Home</Link></Nav.Link>
-            <Nav.Link><Link to="" className='text-decoration-none text-white'>Blog</Link></Nav.Link>
+            <Nav.Link><NavLink to="/" className={({ isActive }) => isActive ? "text-decoration-none text-info" : "text-decoration-none text-white"
+          }>Home</NavLink></Nav.Link>
+            <Nav.Link><NavLink to="/blog" className={({ isActive }) => isActive ? "text-decoration-none text-info" : "text-decoration-none text-white"
+          }>Blog</NavLink></Nav.Link>
            {
             user&&<Nav.Link href="#pricing" className='text-white'>sakfd</Nav.Link>
            }
+        
            {
             user?<Button variant="light" onClick={handleLogout}>Logout</Button>:<Link to="/login"><Button variant="light">Login</Button></Link>
            }

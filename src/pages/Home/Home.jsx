@@ -20,7 +20,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='home-page'>
+    <div className='home-page bg-dark text-light'>
       <div className='banner'>
         <div className='container d-flex justify-content-around align-items-center pt-5'>
           <div className='serviceList'>
@@ -39,7 +39,7 @@ const Home = () => {
       </div>
 
       <div className='our-chefs container'>
-        <h4 className='text-center headingStyle fw-bold mt-5'>Our Chefs</h4>
+        <h4 className='text-center fw-bold mt-5'>Our Chefs</h4>
         <div className='chefs-item-container'>
           {
             loading && <div className="d-flex justify-content-center">
@@ -48,7 +48,7 @@ const Home = () => {
               </div>
             </div>
           }
-          <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 gap-sm-1 gap-md-4 w-100 mx-auto pt-5' style={{ paddingLeft: "100px" }}>
+          <div className='text-dark row row-cols-1 row-cols-md-2 row-cols-lg-3 gap-sm-1 gap-md-4 w-100 mx-auto pt-5' style={{ paddingLeft: "100px" }}>
             {
               chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)
             }
