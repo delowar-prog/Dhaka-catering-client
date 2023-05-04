@@ -8,22 +8,23 @@ import ErrorPage from '../pages/404/ErrorPage';
 import ChefDetails from '../pages/ChefDetails/ChefDetails';
 import PrivateRoute from './PrivateRoute';
 import Blogs from '../pages/Blogs/Blogs';
+import LazyLoad from 'react-lazy-load';
 
 const router = createBrowserRouter([
         {
           path: "/",
-          element:<MainLayout></MainLayout>,
+          element:<LazyLoad><MainLayout></MainLayout></LazyLoad>,
           errorElement: <ErrorPage />,
           children: [
             {
               path: "/",
               element: <Home />,
-              loader:()=>fetch('https://dhaka-catering-server-delowarmilton-gmailcom.vercel.app/services')
+              loader:()=>fetch('http://localhost:5000/services')
             },
             {
               path:'/chef-details/:id',
               element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-              loader:({params})=>fetch(`https://dhaka-catering-server-delowarmilton-gmailcom.vercel.app/chef/${params.id}`)
+              loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
             },
             {
               path:'/blog',

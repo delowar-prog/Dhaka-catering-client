@@ -5,14 +5,14 @@ import { AiOutlineLike } from "react-icons/ai";
 const ChefCard = ({chef}) => {
     const {id,chefName,photo,experience,recipes_list,likes}=chef
     return (
-        <div className="col card p-3" style={{ width: "18rem" }}>
+        <div className="col card p-3 mt-3 customWidth" style={{}} >
             <img src={photo} className="card-img-top w-100" alt="..." />
             <div className="card-body">
                 <h5 className="card-title text-center">{chefName}</h5>
                 <hr></hr>
                 <div className='d-flex justify-content-between'>
                     <span><FaGraduationCap className='fs-4'></FaGraduationCap>-{experience}</span>
-                    <span className='flex-grow-1 ms-3'>Recipes-{recipes_list.length}</span>
+                    <span className='ms-3'>Recipes-{recipes_list.length}</span>
                     <span className='d-flex align-items-center gap-1'><AiOutlineLike className='fs-6'></AiOutlineLike>{likes}</span>
                 </div>
                 <hr></hr>

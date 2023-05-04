@@ -1,0 +1,22 @@
+.clientBg{
+    background-color: red;
+}
+.clients-item-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.client-card{
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.client-card:hover{
+    transform: translateY(-10px);
+}
+@media only screen and (max-width: 600px) {
+    .clients-item-container{
+        grid-template-columns: repeat(2, 1fr);
+    } 
+}
