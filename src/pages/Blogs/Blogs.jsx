@@ -25,7 +25,10 @@ const Blogs = () => {
         <p className='fs-5 text-justify px-2 md:px-3'>PropTypes is a built-in library that allows to validate a props that are passed into a component. Using the PropTypes a developer catch error early in the development process.
         </p>
         <p className='fs-5 text-justify px-2 md:px-3'><strong>Process of using PropTypes:</strong><br></br></p>
-        <ul>
+        <ul className='fs-5'>
+        <li>At first import Proptypes from ‘props-types’.</li>
+        <li>Define propTypes</li>
+        <li>Use propTypes in the component</li>
         </ul>
       </div>
 

@@ -5,7 +5,7 @@ import { AiOutlineLike } from "react-icons/ai";
 const ChefCard = ({chef}) => {
     const {id,chefName,photo,experience,recipes_list,likes}=chef
     return (
-        <div className="col card p-3 mt-3 customWidth" style={{}} >
+        <div className="col card p-3 mt-3 customWidth">
             <img src={photo} className="card-img-top w-100" alt="..." />
             <div className="card-body">
                 <h5 className="card-title text-center">{chefName}</h5>

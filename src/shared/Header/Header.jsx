@@ -15,7 +15,7 @@ const Header = () => {
     <div className=''>
       <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "#212B35" }} className='py-4'>
         <Container>
-          <Navbar.Brand href="#home" className='text-white'>Dhaka Catering</Navbar.Brand>
+          <Navbar.Brand href="#home" className='text-warning fs-3'>Dhaka Catering</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
